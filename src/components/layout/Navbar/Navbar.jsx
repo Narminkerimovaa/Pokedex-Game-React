@@ -1,5 +1,6 @@
+import Button from '../../ui/Button';
 import styles from './Navbar.module.css';
-import Logo from "@/assets/logo.svg?react";
+import Logo from "./../../../assets/logo.svg?react";
 
 const Navbar = () => {
   return (
@@ -10,7 +11,12 @@ const Navbar = () => {
           </div>
         <h1>POKÉDEX</h1>
       </div>
-      <button className={styles.navBtn}>NEW BATTLE</button>
+      <Button
+      onClick={() => console.log("Göndərildi!")}
+      variant="play"
+      >
+        NEW BATTLE
+      </Button>
     </nav>
   );
 };

@@ -1,7 +1,7 @@
-import styles from './styles/App.module.css';
-import Sidebar from './components/layout/Sidebar';
-import Navbar from './components/layout/Navbar';
-import Battle from './components/battle/Battle';
+import styles from "./styles/App.module.css";
+import Sidebar from "./components/layout/Sidebar";
+import Navbar from "./components/layout/Navbar";
+import BattleContainer from "./components/battle/BattleContainer";
 
 const App = () => {
   return (
@@ -9,7 +9,7 @@ const App = () => {
       <Sidebar />
       <main className={styles.mainContent}>
         <Navbar />
-        <Battle />
+        <BattleContainer />
       </main>
     </div>
   );

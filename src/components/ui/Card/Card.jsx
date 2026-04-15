@@ -1,11 +1,10 @@
 import styles from './Card.module.css';
 
-const Card = () => {
+const Card = ({children,variant,onClick,className = ""}) => {
+  const variantClass = styles[variant] || "";
   return (
-    <div className={styles.pokeCard} onClick=''>
-      <img src='' alt='' />
-      <h4></h4>
-      <p>XP</p>
+    <div className={`${variantClass} ${className}`} onClick={onClick}>
+      {children}
     </div>
   );
 };
