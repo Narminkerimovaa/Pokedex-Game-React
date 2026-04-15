@@ -1,0 +1,21 @@
+.logoArea {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoArea h1 {
+  color: var(--color-accent);
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+/* .logoSvg circle,
+.logoSvg line {
+  stroke: var(--color-accent);
+}
+
+.logoSvg .dot {
+  fill: var(--color-accent);
+} */

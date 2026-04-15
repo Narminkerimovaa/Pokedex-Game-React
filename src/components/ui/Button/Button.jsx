@@ -2,8 +2,8 @@ import styles from './Button.module.css';
 
 const Button = () => {
   return (
-    <button className={styles.primaryBtn}>
-      CONFIRM
+    <button className={styles.btn} onClick=''>
+     
     </button>
   );
 };

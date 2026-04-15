@@ -1,25 +1,16 @@
-import styles from "./styles/App.module.css";
+import styles from './styles/App.module.css';
+import Sidebar from './components/layout/Sidebar';
+import Navbar from './components/layout/Navbar';
+import Battle from './components/battle/Battle';
 
 const App = () => {
   return (
     <div className={styles.appContainer}>
-      
-      <aside className={styles.sidebar}>
-        {/* Sidebar (History) bura gələcək */}
-      </aside>
-
+      <Sidebar />
       <main className={styles.mainContent}>
-        
-        <nav className={styles.navbar}>
-          {/* Navbar (Logo və Button) bura gələcək */}
-        </nav>
-
-        <div className={styles.arenaPlaceholder}>
-          {/* Arena (Teams) bura gələcək */}
-        </div>
-
+        <Navbar />
+        <Battle />
       </main>
-
     </div>
   );
 };

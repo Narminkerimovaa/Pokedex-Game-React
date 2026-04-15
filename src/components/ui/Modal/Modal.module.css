@@ -1,0 +1,75 @@
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: var(--color-modal-overlay);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modalContent {
+  background: var(--color-card-bg);
+  color: var(--color-card-text);
+  padding: 2.5rem;
+  border-radius: var(--radius-xl);
+  width: 320px;
+  text-align: center;
+}
+
+.modalContent img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+/* PokiModal spesifik */
+.desc {
+  color: var(--color-text-muted);
+  margin: 15px 0;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  font-weight: 900;
+  background: var(--color-modal-stats);
+  padding: 10px;
+  border-radius: var(--radius-sm);
+}
+
+/* HistoryModal spesifik */
+.historyIcon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.historyDetails {
+  text-align: left;
+  margin: 20px 0;
+  background: var(--color-modal-stats);
+  padding: 15px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Shared close button */
+.closeBtn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  border: none;
+  background: var(--color-card-text);
+  color: var(--color-card-bg);
+  font-weight: 700;
+  font-family: var(--font-family);
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.closeBtn:hover {
+  opacity: 0.85;
+}
