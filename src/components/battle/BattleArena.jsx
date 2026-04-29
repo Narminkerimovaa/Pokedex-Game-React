@@ -1,19 +1,24 @@
 import styles from "./Battle.module.css";
 import PokeTeam from "./PokeTeam";
 
-const BattleArena = ({ teamName, totalXP, status }) => {
+const BattleArena = ({ teamName, hand, totalXP, isWinner }) => {
   return (
     <div className={styles.battleArena}>
       <div className={styles.headText}>
         <h3 className={styles.teamHeader}>{teamName}</h3>
         <div className={styles.scoreText}>{totalXP} XP</div>
-        <div className={styles.winLabel}>{status}</div>
+        <div
+          className={`${styles.statusLabel} ${
+            isWinner ? styles.winLabel : styles.statusLabel
+          }`}
+        >
+          {isWinner ? "WINNER" : "DEFEAT"}
+        </div>
       </div>
       <div className={styles.cardGrid}>
-        <PokeTeam />
-        <PokeTeam />
-        <PokeTeam />
-        <PokeTeam />
+        {hand.map((pokemon) => (
+          <PokeTeam key={pokemon.id} pokemon={pokemon} />
+        ))}
       </div>
     </div>
   );

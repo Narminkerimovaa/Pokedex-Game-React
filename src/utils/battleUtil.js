@@ -32,5 +32,4 @@ export function calcXP(team) {
 export function getWinner(t1, t2) {
   return t1 > t2 ? "team1" : "team2";
 }
-
-
+export const pad = (id) => `00${id}`.slice(-3);

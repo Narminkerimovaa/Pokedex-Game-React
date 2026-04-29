@@ -45,7 +45,10 @@
   font-weight: 900;
 }
 
-.winLabel {
+.statusLabel{
   font-weight: 700;
+}
+
+.winLabel {
   color: var(--color-accent);
 }
