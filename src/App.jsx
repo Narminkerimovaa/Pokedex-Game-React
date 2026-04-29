@@ -3,16 +3,14 @@ import Sidebar from "./components/layout/Sidebar";
 import Navbar from "./components/layout/Navbar";
 import BattleContainer from "./components/battle/BattleContainer";
 import { useEffect, useState } from "react";
-import {
-  distributePokemon,
-  calcXP,
-  getWinner,
-} from "./utils/battleUtil.js";
+import { distributePokemon, calcXP, getWinner } from "./utils/battleUtil.js";
 
 const App = () => {
   const [team1, setTeam1] = useState([]);
   const [team2, setTeam2] = useState([]);
   const [winner, setWinner] = useState("");
+  const [history, setHistory] = useState([]);
+  const [animKey, setAnimKey] = useState(0)
 
   function startBattle() {
     const teams = distributePokemon();
@@ -23,6 +21,16 @@ const App = () => {
     setTeam1(team1);
     setTeam2(team2);
     setWinner(winner);
+    setHistory((prev) => [
+      ...prev,
+      {
+        winner: winner,
+        xp1,
+        xp2,
+        time: new Date().toLocaleTimeString(),
+      },
+    ]);
+    setAnimKey(prev => prev + 1)
   }
 
   useEffect(() => {
@@ -32,10 +40,10 @@ const App = () => {
 
   return (
     <div className={styles.appContainer}>
-      <Sidebar />
+      <Sidebar history={history} />
       <main className={styles.mainContent}>
-        <Navbar startBattle={startBattle}/>
-        <BattleContainer team1={team1} team2={team2} winner={winner}/>
+        <Navbar startBattle={startBattle} />
+        <BattleContainer team1={team1} team2={team2} winner={winner} animKey={animKey}/>
       </main>
     </div>
   );

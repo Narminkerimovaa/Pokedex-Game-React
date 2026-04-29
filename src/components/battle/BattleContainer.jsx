@@ -1,11 +1,13 @@
 import BattleArena from "./BattleArena";
 import styles from "./Battle.module.css";
 import { calcXP } from "../../utils/battleUtil";
+import Confetti from "../ui/Confetti";
 
 
-const BattleContainer = ({team1,team2,winner}) => {
+const BattleContainer = ({team1,team2,winner,animKey}) => {
   return (
     <div className={styles.battleContainer}>
+      <Confetti animKey={animKey} />
       <BattleArena
         teamName="TEAM 1"
         hand={team1}

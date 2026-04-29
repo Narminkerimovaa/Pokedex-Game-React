@@ -3,7 +3,7 @@ import PokeTeam from "./PokeTeam";
 
 const BattleArena = ({ teamName, hand, totalXP, isWinner }) => {
   return (
-    <div className={styles.battleArena}>
+    <div className={`${styles.battleArena} ${isWinner ? styles.isWinner : ''}`}>
       <div className={styles.headText}>
         <h3 className={styles.teamHeader}>{teamName}</h3>
         <div className={styles.scoreText}>{totalXP} XP</div>

@@ -1,10 +1,5 @@
 /* ── TeamCard (wrapper) ── */
 
-.isWinner {
-  background: var(--color-winner-bg);
-  border-color: var(--color-accent);
-}
-
 /* ── PokiCard ── */
 .pokeCard {
   background: var(--color-card-bg);

@@ -1,0 +1,22 @@
+.confettiContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.particle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  background: var(--color);
+  opacity: 0;
+  animation: blast 1.5s ease-out forwards;
+}
+
+@keyframes blast {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  100% { transform: rotate(var(--angle)) translateY(var(--dist)) rotate(360deg); opacity: 0; }
+}

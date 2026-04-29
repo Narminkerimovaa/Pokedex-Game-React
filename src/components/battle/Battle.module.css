@@ -52,3 +52,8 @@
 .winLabel {
   color: var(--color-accent);
 }
+
+.isWinner {
+  background: var(--color-winner-bg);
+  border-color: var(--color-accent);
+}
