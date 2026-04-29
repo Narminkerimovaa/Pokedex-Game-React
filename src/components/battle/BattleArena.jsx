@@ -1,7 +1,7 @@
 import styles from "./Battle.module.css";
 import PokeTeam from "./PokeTeam";
 
-const BattleArena = ({ teamName, hand, totalXP, isWinner }) => {
+const BattleArena = ({ teamName, hand, totalXP, isWinner,onPokiClick }) => {
   return (
     <div className={`${styles.battleArena} ${isWinner ? styles.isWinner : ''}`}>
       <div className={styles.headText}>
@@ -17,7 +17,7 @@ const BattleArena = ({ teamName, hand, totalXP, isWinner }) => {
       </div>
       <div className={styles.cardGrid}>
         {hand.map((pokemon) => (
-          <PokeTeam key={pokemon.id} pokemon={pokemon} />
+          <PokeTeam key={pokemon.id} pokemon={pokemon} onPokiClick={onPokiClick} />
         ))}
       </div>
     </div>

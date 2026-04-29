@@ -2,6 +2,7 @@ import styles from "./styles/App.module.css";
 import Sidebar from "./components/layout/Sidebar";
 import Navbar from "./components/layout/Navbar";
 import BattleContainer from "./components/battle/BattleContainer";
+import Modal from './components/ui/Modal'
 import { useEffect, useState } from "react";
 import { distributePokemon, calcXP, getWinner } from "./utils/battleUtil.js";
 
@@ -11,6 +12,7 @@ const App = () => {
   const [winner, setWinner] = useState("");
   const [history, setHistory] = useState([]);
   const [animKey, setAnimKey] = useState(0)
+  const [selectedPokemon, setSelectedPokemon] = useState(null)
 
   function startBattle() {
     const teams = distributePokemon();
@@ -43,8 +45,9 @@ const App = () => {
       <Sidebar history={history} />
       <main className={styles.mainContent}>
         <Navbar startBattle={startBattle} />
-        <BattleContainer team1={team1} team2={team2} winner={winner} animKey={animKey}/>
+        <BattleContainer team1={team1} team2={team2} winner={winner} animKey={animKey} onPokiClick={setSelectedPokemon}/>
       </main>
+      {selectedPokemon && <Modal pokemon={selectedPokemon} onClose={() => setSelectedPokemon(null)} />}
     </div>
   );
 };

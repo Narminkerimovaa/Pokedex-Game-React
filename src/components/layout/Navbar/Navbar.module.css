@@ -45,3 +45,13 @@
   transform: scale(1.05);
   filter: brightness(1.1);
 }
+
+@media (max-width: 768px) {
+  .logoArea h1 {
+    font-size: 1.5rem;
+  }
+  .dot {
+    width: 28px;
+    height: 28px;
+  }
+}

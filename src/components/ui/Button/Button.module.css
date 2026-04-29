@@ -24,10 +24,12 @@
  
 /* variant="close" — Modal-dakı CLOSE düyməsi */
 .close {
-  margin-top: 20px;
+  margin-top: 8px;
   width: 100%;
   padding: 12px;
   border-radius: 12px;
   background: #0f172a;
   color: white;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
 }

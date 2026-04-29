@@ -1,7 +1,7 @@
 .modalOverlay {
   position: fixed;
   inset: 0;
-  background: var(--color-modal-overlay);
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,67 +9,44 @@
 }
 
 .modalContent {
-  background: var(--color-card-bg);
-  color: var(--color-card-text);
-  padding: 2.5rem;
-  border-radius: var(--radius-xl);
-  width: 320px;
+  background: #ffffff;
+  color: #0f172a;
+  padding: 2rem;
+  border-radius: 24px;
+  width: 340px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
 .modalContent img {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   object-fit: contain;
 }
 
-/* PokiModal spesifik */
+.modalContent h2 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin: 0;
+}
+
 .desc {
-  color: var(--color-text-muted);
-  margin: 15px 0;
+  color: #64748b;
+  font-size: 0.95rem;
+  margin: 0;
 }
 
 .stats {
   display: flex;
   justify-content: space-around;
-  font-weight: 900;
-  background: var(--color-modal-stats);
-  padding: 10px;
-  border-radius: var(--radius-sm);
-}
-
-/* HistoryModal spesifik */
-.historyIcon {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.historyDetails {
-  text-align: left;
-  margin: 20px 0;
-  background: var(--color-modal-stats);
-  padding: 15px;
-  border-radius: var(--radius-lg);
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-/* Shared close button */
-.closeBtn {
-  margin-top: 20px;
   width: 100%;
-  padding: 12px;
-  border-radius: var(--radius-md);
-  border: none;
-  background: var(--color-card-text);
-  color: var(--color-card-bg);
   font-weight: 700;
-  font-family: var(--font-family);
-  cursor: pointer;
-  transition: opacity var(--transition-fast);
-}
-
-.closeBtn:hover {
-  opacity: 0.85;
+  font-size: 0.85rem;
+  background: #f1f5f9;
+  padding: 12px;
+  border-radius: 12px;
+  color: #0f172a;
 }
