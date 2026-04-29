@@ -2,7 +2,7 @@ import Button from '../../ui/Button';
 import styles from './Navbar.module.css';
 import Logo from "./../../../assets/logo.svg?react";
 
-const Navbar = () => {
+const Navbar = ({startBattle}) => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.logoArea}>
@@ -12,7 +12,7 @@ const Navbar = () => {
         <h1>POKÉDEX</h1>
       </div>
       <Button
-      onClick={() => console.log("Göndərildi!")}
+      onClick={() => startBattle()}
       variant="play"
       >
         NEW BATTLE

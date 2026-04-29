@@ -1,33 +1,9 @@
 import BattleArena from "./BattleArena";
 import styles from "./Battle.module.css";
-import {
-  distributePokemon,
-  calcXP,
-  getWinner,
-} from "./../../utils/battleUtil.js";
-import { useEffect, useState } from "react";
+import { calcXP } from "../../utils/battleUtil";
 
-const BattleContainer = () => {
-  const [team1, setTeam1] = useState([]);
-  const [team2, setTeam2] = useState([]);
-  const [winner, setWinner] = useState("");
 
-  function startBattle() {
-    const teams = distributePokemon();
-    const { team1, team2 } = teams;
-    const xp1 = calcXP(team1);
-    const xp2 = calcXP(team2);
-    const winner = getWinner(xp1, xp2);
-    setTeam1(team1);
-    setTeam2(team2);
-    setWinner(winner);
-  }
-
-useEffect(() => {
-  startBattle();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-}, []);
-
+const BattleContainer = ({team1,team2,winner}) => {
   return (
     <div className={styles.battleContainer}>
       <BattleArena
