@@ -1,18 +1,61 @@
 .appContainer {
-  height: 100vh;
-  width: 100vw;
   display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
   background: var(--color-bg);
-  font-family: var(--font-family);
-  color: var(--color-text);
   overflow: hidden;
 }
 
 .mainContent {
+  position: relative;
   flex: 1;
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
-  position: relative;
+  overflow: hidden;
+  height: 100%;
+  min-width: 0;
 }
 
+.appContainer::-webkit-scrollbar {
+  width: 5px;
+}
+
+@media (max-width: 768px) {
+  .appContainer {
+    position: relative; /* Fixed-i mütləq ləğv et */
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+    display: block;
+    order: 1;
+  }
+
+  .mainContent {
+    position: static;
+    height: auto;
+    padding: 10px;
+    overflow: visible;
+  }
+}
+
+
+/* Chrome, Safari və iPhone brauzerləri üçün */
+*::-webkit-scrollbar {
+  width: 4px !important;
+  height: 4px !important; /* Üfüqi scroll üçün */
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 10px !important;
+}

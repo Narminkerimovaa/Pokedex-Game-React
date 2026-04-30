@@ -11,17 +11,16 @@
   cursor: pointer;
   transition: transform var(--transition-base);
   color: var(--color-card-text);
-  width: 18rem;
+  width: 100%; 
+  max-width: 18rem; 
+  min-width: 0;
   gap: 10px;
-}
-
-.pokeCard:hover {
-  transform: translateY(-5px);
 }
 
 .pokeCard img {
   width: 120px;
   height: 120px;
+  max-width: 100%; 
   object-fit: contain;
 }
 
@@ -30,16 +29,24 @@
   line-height: 1.2;
   font-size: 24px;
   font-family: var(--font-family);
+  margin: 0;
 }
 
 .pokeCard p {
   font-size: 0.8rem;
   color: var(--color-text-muted);
   font-weight: 700;
+  margin: 0;
 }
 
-@media (max-width: 768px) {
-  .pokeCard {
-    width: 100%;
-  }
-}
+
+
+
+ 
+
+
+
+
+
+
+
